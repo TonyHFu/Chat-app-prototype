@@ -23,7 +23,6 @@ const MessagesArea = ({
 				<img
 					className="profile-picture"
 					src={`/seed_assets/${friend_first_name}.png`}
-					alt={`profile photo for ${friend_first_name}`}
 				></img>
 				{friend_first_name + " " + friend_last_name}
 			</div>

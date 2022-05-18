@@ -35,7 +35,6 @@ export default function ConversationsListItem(props) {
 			<img
 				className="profile-picture"
 				src={`/seed_assets/${conversation.friend_first_name}.png`}
-				alt={`profile photo for ${conversation.friend_first_name}`}
 			></img>
 			<div className="conversation-preview">
 				{conversation.friend_first_name + " " + conversation.friend_last_name}

@@ -4,8 +4,10 @@ import { Outlet, useLocation } from "react-router-dom";
 import axios from "axios";
 import DropDownLogin from "./components/DropDownLogin";
 import ProfilePopup from "./components/Profiles/ProfilePopup";
+import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import { API_ROOT } from "./constants";
+import classNames from "classnames";
 
 import useApplicationData from "./hooks/useAppData";
 import Cable from "./components/Cable";
@@ -143,12 +145,7 @@ function App(props) {
 				conversationsChannel.unsubscribe();
 			}
 		};
-	}, [
-		logged_in_user,
-		cableApp.cable.subscriptions,
-		handleReceivedConversation,
-		isLoggedIn,
-	]);
+	}, [logged_in_user]);
 
 	const handleClick = id => {
 		//sets state now instead of waiting for axios call to resolve to speed up user display
@@ -441,25 +438,20 @@ function App(props) {
 			<nav className="nav">
 				<a id="nav-profiles-button" href="/profiles">
 					<div className="home-logo">
-						<img id="bridge-logo" src="/bridge.png" alt="bridge logo" />
+						<img id="bridge-logo" src="/bridge.png" />
 						<p>Bridge</p>
 					</div>
 				</a>
 
 				<div className="nav-right-icons">
 					<a className="chat-logo-button" href="/chat">
-						{alert && <i className="fa-solid fa-comment-dots alert"></i>}
+						{alert && <i class="fa-solid fa-comment-dots alert"></i>}
 
-						{!alert && <i className="fa-solid fa-comment-dots"></i>}
+						{!alert && <i class="fa-solid fa-comment-dots"></i>}
 					</a>
 
 					<a className="profile-logo-button" href="javascript:void(0)">
-						<img
-							id="profile-logo"
-							src="/account.png"
-							alt="profile logo"
-							onClick={handleOpen}
-						/>
+						<img id="profile-logo" src="/account.png" onClick={handleOpen} />
 					</a>
 
 					<DropDownLogin

@@ -1,6 +1,7 @@
 import "./ProfilePopup.scss";
 import Button from "@mui/material/Button";
 import { useState } from "react";
+import Switch from "@mui/material/Switch";
 import { API_ROOT, HEADERS } from "../../constants";
 
 export default function ProfilePopup(props) {
@@ -13,7 +14,7 @@ export default function ProfilePopup(props) {
 	const [edit, setEdit] = useState(props.bio);
 
 	// State for editing bio button click
-	const [clickEdit] = useState(false);
+	const [clickEdit, setClickEdit] = useState(false);
 
 	const handleChange = function (event) {
 		setEdit(event.target.value);
@@ -89,7 +90,7 @@ export default function ProfilePopup(props) {
 			</div>
 
 			<div className="popup-top">
-				<img className="popup-img" src={props.image} alt="popup image" />
+				<img className="popup-img" src={props.image} />
 				<table>
 					<tr>
 						<th> Language </th>
@@ -140,7 +141,7 @@ export default function ProfilePopup(props) {
 
 			{currentUser && (
 				<div id="mock-edit1" href="/">
-					<img id="edit-button1" src="/system-update.png" alt="edit button" />
+					<img id="edit-button1" src="/system-update.png" />
 				</div>
 			)}
 

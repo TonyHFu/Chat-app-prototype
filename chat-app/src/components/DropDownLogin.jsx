@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./DropDownLogin.scss";
 
 import Box from "@mui/material/Box";
@@ -7,6 +7,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { red } from "@mui/material/colors";
 
 export default function DropDownLogin(props) {
 	const handleLogin = data => {
@@ -47,7 +48,7 @@ export default function DropDownLogin(props) {
 
 	useEffect(() => {
 		loginStatus();
-	});
+	}, []);
 
 	const handleChange = event => {
 		// Changes loggedin user
@@ -87,7 +88,6 @@ export default function DropDownLogin(props) {
 						"border-radius": "50%",
 						margin: "-5px, 5px",
 					}}
-					alt="user profile image"
 				/>
 				<span>{information.user.first_name}</span>
 			</MenuItem>
