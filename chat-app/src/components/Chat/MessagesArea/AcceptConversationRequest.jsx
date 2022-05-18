@@ -5,9 +5,12 @@ export default function AcceptConversationRequest(props) {
 	const handleDeclineRequest = e => {
 		e.preventDefault();
 		axios
-			.delete(`http://localhost:3000/conversations/${conversation_id}`, {
-				withCredentials: true,
-			})
+			.delete(
+				`https://intense-wave-95323.herokuapp.com/conversations/${conversation_id}`,
+				{
+					withCredentials: true,
+				}
+			)
 
 			.then(response => {
 				console.log(
@@ -21,7 +24,7 @@ export default function AcceptConversationRequest(props) {
 		e.preventDefault();
 		axios
 			.put(
-				`http://localhost:3000/conversations/${conversation_id}`,
+				`https://intense-wave-95323.herokuapp.com/conversations/${conversation_id}`,
 				{ action_type: "accept" },
 				{
 					withCredentials: true,

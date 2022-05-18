@@ -23,7 +23,7 @@ export default function EditingForm(props) {
 		const { text, conversation_id, sender_id, receiver_id } = message;
 		axios
 			.put(
-				`http://localhost:3000/messages/${message.id}`,
+				`https://intense-wave-95323.herokuapp.com/messages/${message.id}`,
 				{
 					new_text: newText,
 					conversation_id,

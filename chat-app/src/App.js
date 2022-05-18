@@ -175,7 +175,7 @@ function App(props) {
 		//axios request to the server telling it that the latest message for the conversation has now been seen
 		axios
 			.put(
-				`http://localhost:3000/conversations/${id}`,
+				`https://intense-wave-95323.herokuapp.com/conversations/${id}`,
 				{ action_type: "seen" },
 				{
 					withCredentials: true,
@@ -307,7 +307,7 @@ function App(props) {
 					newConversation.seen = true;
 					axios
 						.put(
-							`http://localhost:3000/conversations/${conversation.id}`,
+							`https://intense-wave-95323.herokuapp.com/conversations/${conversation.id}`,
 							{ action_type: "seen" },
 							{
 								withCredentials: true,
@@ -400,7 +400,7 @@ function App(props) {
 			) {
 				axios
 					.put(
-						`http://localhost:3000/conversations/${message.conversation_id}`,
+						`https://intense-wave-95323.herokuapp.com/conversations/${message.conversation_id}`,
 						{ action_type: "seen" },
 						{
 							withCredentials: true,

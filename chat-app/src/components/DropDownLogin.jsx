@@ -33,7 +33,7 @@ export default function DropDownLogin(props) {
 	// Gets user logged_in status and handleLogin/Logout accordingly
 	const loginStatus = () => {
 		axios
-			.get("http://localhost:3000/logged_in", {
+			.get("https://intense-wave-95323.herokuapp.com/logged_in", {
 				withCredentials: true,
 			})
 			.then(response => {
@@ -54,7 +54,7 @@ export default function DropDownLogin(props) {
 		// Changes loggedin user
 		axios
 			.post(
-				"http://localhost:3000/login",
+				"https://intense-wave-95323.herokuapp.com/login",
 				{
 					user: {
 						email: `admin${event.target.value}@admin.com`,
