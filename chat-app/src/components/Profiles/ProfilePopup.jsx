@@ -89,7 +89,7 @@ export default function ProfilePopup(props) {
 			</div>
 
 			<div className="popup-top">
-				<img className="popup-img" src={props.image} alt="popup" />
+				<img className="popup-img" src={props.image} alt="popup image" />
 				<table>
 					<tr>
 						<th> Language </th>

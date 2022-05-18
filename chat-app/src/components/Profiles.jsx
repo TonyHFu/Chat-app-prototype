@@ -50,7 +50,7 @@ export default function Profiles() {
 		language => language.language_id
 	);
 
-	const usersMapped = userInformation.forEach(information => {
+	const usersMapped = userInformation.map(information => {
 		let offeredLanguages = [];
 		for (const language of information.languages) {
 			// Create array of native languages per mapped user
@@ -112,6 +112,8 @@ export default function Profiles() {
 				/>
 			);
 		}
+
+		return;
 	});
 
 	return (

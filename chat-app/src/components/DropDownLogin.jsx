@@ -87,7 +87,7 @@ export default function DropDownLogin(props) {
 						"border-radius": "50%",
 						margin: "-5px, 5px",
 					}}
-					alt=""
+					alt="user profile image"
 				/>
 				<span>{information.user.first_name}</span>
 			</MenuItem>
