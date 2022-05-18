@@ -1,4 +1,4 @@
-import { React, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function Cable(props) {
 	const { cableApp, conversation, handleReceivedMessage } = props;
@@ -24,6 +24,6 @@ export default function Cable(props) {
 		return () => {
 			messageChannel.unsubscribe();
 		};
-	}, []);
+	});
 	return;
 }

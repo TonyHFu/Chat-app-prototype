@@ -9,7 +9,7 @@ import DropDownFilter from "./DropDownFilter";
 
 export default function Profiles() {
 	const { users, friendRequest, setFriendRequest } = useApplicationData();
-	const { logged_in_user, cableApp } = useOutletContext();
+	const { logged_in_user } = useOutletContext();
 	const [languageId, setLanguageId] = useState(0);
 
 	// Pulls user data from server
@@ -59,7 +59,7 @@ export default function Profiles() {
 			}
 		}
 
-		let mappedUserLearningLanguages=[];
+		let mappedUserLearningLanguages = [];
 		for (const language of information.languages) {
 			// Create array of native languages per mapped user
 			if (language.learning === true) {
@@ -77,7 +77,7 @@ export default function Profiles() {
 				if (learningLanguagesIds.includes(lang)) {
 					// Check if mapped user learning language is equal to currentUser's offered languages
 					for (let learnLang of mappedUserLearningLanguages) {
-						if(offeringLanguagesIds.includes(learnLang)) {
+						if (offeringLanguagesIds.includes(learnLang)) {
 							match = true;
 						}
 					}
@@ -88,7 +88,7 @@ export default function Profiles() {
 			for (let lang of offeredLanguages) {
 				if (languageId === lang) {
 					for (let learnLang of mappedUserLearningLanguages) {
-						if(offeringLanguagesIds.includes(learnLang)) {
+						if (offeringLanguagesIds.includes(learnLang)) {
 							match = true;
 						}
 					}
@@ -112,6 +112,8 @@ export default function Profiles() {
 				/>
 			);
 		}
+
+		return;
 	});
 
 	return (

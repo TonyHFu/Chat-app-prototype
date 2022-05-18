@@ -28,6 +28,8 @@ export default function DropDownFilter(props) {
 				return "🇵🇹";
 			case 8:
 				return "🇮🇳";
+			default:
+				return "";
 		}
 	};
 

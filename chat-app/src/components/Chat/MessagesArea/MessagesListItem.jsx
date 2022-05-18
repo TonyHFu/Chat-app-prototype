@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import "./styles/MessagesListItem.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import EditingForm from "./EditingForm";
 import findChange from "../trackChanges";
 
@@ -34,10 +34,7 @@ export default function MessagesListItem(props) {
 		const newTextArr = message.new_text.split(" ");
 
 		//returns arrays with indices of elements matched, added, and deleted, as well as result which contains all indices
-		const { matched, added, deleted, result } = findChange(
-			oldTextArr,
-			newTextArr
-		);
+		const { added, deleted } = findChange(oldTextArr, newTextArr);
 
 		//Returns array of components with appropriate tags and classes for styling
 		oldTextWithStrikes = oldTextArr.map((word, i) => {

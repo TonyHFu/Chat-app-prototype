@@ -25,7 +25,7 @@ export default function NewMessageForm(props) {
 				receiver_id: friend_id,
 			};
 		});
-	}, [props]);
+	}, [props, conversation_id, friend_id, logged_in_user.id]);
 
 	const handleChange = e => {
 		setState(prev => {

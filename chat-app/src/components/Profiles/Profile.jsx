@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Profile.scss";
 
-import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import ProfilePopup from "./ProfilePopup";
 
@@ -30,6 +29,8 @@ export default function Profile(props) {
 				return "🇵🇹";
 			case 8:
 				return "🇮🇳";
+			default:
+				return "";
 		}
 	};
 
@@ -58,7 +59,11 @@ export default function Profile(props) {
 					<span>{props.firstName}</span> <span>{props.lastName}</span>
 				</div>
 				<div className="my-card__media">
-					<img className="profile-img" src={props.image} />
+					<img
+						className="profile-img"
+						src={props.image}
+						alt="profile picture"
+					/>
 				</div>
 				<div>{props.langauages}</div>
 				<div className="languages-container">
