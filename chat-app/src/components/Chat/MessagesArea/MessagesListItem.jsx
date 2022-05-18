@@ -83,6 +83,7 @@ export default function MessagesListItem(props) {
 				<img
 					className="profile-picture"
 					src={`/seed_assets/${friend_first_name}.png`}
+					alt=""
 				></img>
 			)}
 

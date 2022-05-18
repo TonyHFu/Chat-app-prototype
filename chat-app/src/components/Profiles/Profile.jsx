@@ -59,11 +59,7 @@ export default function Profile(props) {
 					<span>{props.firstName}</span> <span>{props.lastName}</span>
 				</div>
 				<div className="my-card__media">
-					<img
-						className="profile-img"
-						src={props.image}
-						alt="profile picture"
-					/>
+					<img className="profile-img" src={props.image} alt="" />
 				</div>
 				<div>{props.langauages}</div>
 				<div className="languages-container">
