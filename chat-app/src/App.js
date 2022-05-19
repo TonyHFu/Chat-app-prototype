@@ -95,7 +95,11 @@ function App(props) {
 			return;
 		}
 		let conversationsChannel;
-		fetch(`${API_ROOT}/conversations`, { credentials: "include" })
+		axios
+			.get("https://intense-wave-95323.herokuapp.com/conversations", {
+				withCredentials: true,
+			})
+			// fetch(`${API_ROOT}/conversations`, { credentials: "include" })
 			.then(res => res.json())
 			.then(conversations => {
 				const sortedConversations = sortConversations(conversations);
