@@ -7,9 +7,9 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
 	allow do
-		origins 'https://profound-cupcake-18d4a3.netlify.app/'
+		# origins 'https://profound-cupcake-18d4a3.netlify.app/'
 
-		# origins '*'
+		origins '*'
 
 		resource '*',
 		         headers: :any,
