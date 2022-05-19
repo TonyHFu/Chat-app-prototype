@@ -9,7 +9,7 @@ import actionCable from "actioncable";
 
 const CableApp = {};
 CableApp.cable = actionCable.createConsumer(
-	`${process.env.REACT_APP_API_WS_ROOT}/cable`
+	`${process.env.REACT_APP_API_WS_ROOT}`
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
