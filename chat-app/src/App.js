@@ -90,6 +90,9 @@ function App(props) {
 	});
 
 	useEffect(() => {
+		if (isLoggedIn) {
+			return;
+		}
 		axios
 			.post(
 				`${process.env.REACT_APP_API_ROOT}/login`,
