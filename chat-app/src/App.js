@@ -126,6 +126,9 @@ function App(props) {
 					return !conversation.deleted && !conversation.seen;
 				});
 				setAlert(conversationChecked);
+			})
+			.catch(error => {
+				console.log(error);
 			});
 		//Creates subscription to the conversations channel
 		conversationsChannel = cableApp.cable.subscriptions.create(
