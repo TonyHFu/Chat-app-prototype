@@ -9,7 +9,7 @@ import actionCable from "actioncable";
 
 const CableApp = {};
 CableApp.cable = actionCable.createConsumer(
-	"intense-wave-95323.herokuapp.com/cable"
+	"ws://intense-wave-95323.herokuapp.com/cable"
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
