@@ -49,4 +49,8 @@ end
 
 gem 'active_model_serializers', '~> 0.10.0'
 
+#Cross site cookies
+
+gem 'rails_same_site_cookie'
+
 
