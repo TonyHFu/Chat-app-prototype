@@ -90,6 +90,34 @@ function App(props) {
 	});
 
 	useEffect(() => {
+		axios
+			.post(
+				`${process.env.REACT_APP_API_ROOT}/login`,
+				{
+					user: {
+						email: `admin1@admin.com`,
+						password: "123456",
+					},
+				},
+				{ withCredentials: true }
+			)
+			.then(response => {
+				if (response.data.logged_in) {
+					setUserState(prev => {
+						return {
+							...prev,
+							isLoggedIn: true,
+							user: response.data.user,
+						};
+					});
+				} else {
+					alert("error logging in");
+				}
+			})
+			.catch(error => console.log("api errors:", error));
+	}, []);
+
+	useEffect(() => {
 		//Skip if not logged in
 		if (!isLoggedIn) {
 			return;
