@@ -97,13 +97,15 @@ export default function DropDownLogin(props) {
 	return (
 		<Box className="drop-down-box-test">
 			<FormControl fullWidth>
-				<InputLabel id="demo-simple-select-label-test"></InputLabel>
+				<InputLabel id="demo-simple-select-label-test">
+					{!props.isLoggedIn && "Login"}
+				</InputLabel>
 				<Select
 					className="login-select"
 					labelId="demo-simple-select-label"
 					id="demo-simple-select"
 					value={props.state.user.id}
-					label="Language"
+					label="Login"
 					onChange={handleChange}
 				>
 					{dropDownArray}

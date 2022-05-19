@@ -468,6 +468,7 @@ function App(props) {
 						state={userState}
 						setState={setUserState}
 						userInformation={userInformation}
+						isLoggedIn={isLoggedIn}
 					/>
 				</div>
 
