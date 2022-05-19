@@ -87,4 +87,7 @@ Rails.application.configure do
 
 	# Do not dump schema after migrations.
 	config.active_record.dump_schema_after_migration = false
+
+	#same site cookies
+	config.action_dispatch.cookies_same_site_protection = :None
 end
