@@ -6,7 +6,7 @@ export default function AcceptConversationRequest(props) {
 		e.preventDefault();
 		axios
 			.delete(
-				`https://intense-wave-95323.herokuapp.com/conversations/${conversation_id}`,
+				`${process.env.REACT_APP_API_ROOT}/conversations/${conversation_id}`,
 				{
 					withCredentials: true,
 				}
@@ -24,7 +24,7 @@ export default function AcceptConversationRequest(props) {
 		e.preventDefault();
 		axios
 			.put(
-				`https://intense-wave-95323.herokuapp.com/conversations/${conversation_id}`,
+				`${process.env.REACT_APP_API_ROOT}/conversations/${conversation_id}`,
 				{ action_type: "accept" },
 				{
 					withCredentials: true,

@@ -24,7 +24,7 @@ export default function ProfilePopup(props) {
 		// Handles sending friend request
 		event.preventDefault();
 
-		fetch(`${API_ROOT}/conversations`, {
+		fetch(`${process.env.REACT_APP_API_ROOT}/conversations`, {
 			method: "POST",
 			headers: HEADERS,
 			body: JSON.stringify({

@@ -8,7 +8,7 @@ export default function useApplicationData(initial) {
 	});
 
 	useEffect(() => {
-		const urlUsers = "https://intense-wave-95323.herokuapp.com/users";
+		const urlUsers = `${process.env.REACT_APP_API_ROOT}/users`;
 
 		axios
 			.get(urlUsers)

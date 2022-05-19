@@ -41,7 +41,7 @@ export default function NewMessageForm(props) {
 	const handleSubmit = e => {
 		e.preventDefault();
 
-		fetch(`${API_ROOT}/messages`, {
+		fetch(`${process.env.REACT_APP_API_ROOT}/messages`, {
 			method: "POST",
 			headers: HEADERS,
 			body: JSON.stringify(state),

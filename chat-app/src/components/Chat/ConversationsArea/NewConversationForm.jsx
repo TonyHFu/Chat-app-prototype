@@ -15,7 +15,7 @@ export default function NewConversationForm(props) {
 	//Submitting new conversation based on user id
 	const handleSubmit = e => {
 		e.preventDefault();
-		fetch(`${API_ROOT}/conversations`, {
+		fetch(`${process.env.REACT_APP_API_ROOT}/conversations`, {
 			method: "POST",
 			headers: HEADERS,
 			body: JSON.stringify({

@@ -8,7 +8,8 @@
 # origins 'https://profound-cupcake-18d4a3.netlify.app/'
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
 	allow do
-		origins 'https://profound-cupcake-18d4a3.netlify.app'
+		origins 'https://profound-cupcake-18d4a3.netlify.app',
+		        'http://localhost:3001'
 
 		resource '*',
 		         headers: :any,

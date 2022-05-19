@@ -95,11 +95,13 @@ function App(props) {
 			return;
 		}
 		let conversationsChannel;
-		axios
-			.get("https://intense-wave-95323.herokuapp.com/conversations", {
-				withCredentials: true,
-			})
-			// fetch(`${API_ROOT}/conversations`, { credentials: "include" })
+		// axios
+		// 	.get(`${process.env.REACT_APP_API_ROOT}/conversations`, {
+		// 		withCredentials: true,
+		// 	})
+		fetch(`${process.env.REACT_APP_API_ROOT}/conversations`, {
+			credentials: "include",
+		})
 			.then(res => res.json())
 			.then(conversations => {
 				const sortedConversations = sortConversations(conversations);
@@ -182,7 +184,7 @@ function App(props) {
 		//axios request to the server telling it that the latest message for the conversation has now been seen
 		axios
 			.put(
-				`https://intense-wave-95323.herokuapp.com/conversations/${id}`,
+				`${process.env.REACT_APP_API_ROOT}/conversations/${id}`,
 				{ action_type: "seen" },
 				{
 					withCredentials: true,
@@ -314,7 +316,7 @@ function App(props) {
 					newConversation.seen = true;
 					axios
 						.put(
-							`https://intense-wave-95323.herokuapp.com/conversations/${conversation.id}`,
+							`${process.env.REACT_APP_API_ROOT}/conversations/${conversation.id}`,
 							{ action_type: "seen" },
 							{
 								withCredentials: true,
@@ -407,7 +409,7 @@ function App(props) {
 			) {
 				axios
 					.put(
-						`https://intense-wave-95323.herokuapp.com/conversations/${message.conversation_id}`,
+						`${process.env.REACT_APP_API_ROOT}/conversations/${message.conversation_id}`,
 						{ action_type: "seen" },
 						{
 							withCredentials: true,
